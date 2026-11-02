@@ -1,0 +1,89 @@
+# Fast end-to-end smoke configuration (CI + Colab "smoke test").
+# This is intentionally tiny: it exercises every pipeline phase but is not a
+# scientific result. For the pilot protocol use configs/pilot.yaml.
+run_name: smoke
+seed_base: 20261102
+
+env:
+  H: 7
+  W: 7
+  braid: 0.15
+  max_steps: 120
+  goal: [6, 6]
+  start: [0, 0]
+
+splits:
+  n_train: 1
+  n_val: 1
+  n_test: 0
+  maze_seed_start: 1000
+
+grid:
+  methods:
+    - q_learning
+    - dyna_q
+    - local_forgetting
+    - cavr
+  scenarios:
+    static:
+      rhos: [0.0]
+    blocking:
+      rhos: [0.0, 0.3]
+    shortcut:
+      rhos: [0.0]
+  steps: 300
+  t_change_frac: 0.5
+  second_change_frac: 0.75
+  episode_seeds: 1
+  save_checkpoints: true
+
+agent:
+  alpha: 0.1
+  alpha_model: 0.15
+  gamma: 0.97
+  eps: 0.1
+  beta: 0.5
+  b0: 0.6
+  edge_lr: 0.4
+  rho_est: 0.1
+  dyna_n: 10
+  ps_n: 10
+  ps_theta: 0.001
+  lf_n: 16
+  cap: 64
+  theta_useful: 0.01
+  theta_push: 0.05
+  theta_probe: 0.12
+  probe_min_gap: 8
+  budget_theta_high: 0.15
+  budget_theta_lo: 0.10
+  drift: 0.01
+  cooldown: 15
+  dstar_retest_interval: 50
+
+calibrated: {}
+
+canonical:
+  H: 6
+  W: 9
+  steps: 300
+  block_t: 100
+  shortcut_t: 200
+  dyna_ns: [0, 5]
+  seeds: 1
+
+train:
+  steps: 600
+
+verify:
+  steps: 300
+  rho: 0.3
+
+calibration:
+  val_steps: 200
+  h_grid: [3.0, 4.0]
+  kappa_grid: [0.001]
+  target_far_per_1000: 5.0
+
+logging:
+  step_log_subset: true

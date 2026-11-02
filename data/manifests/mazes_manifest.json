@@ -1,0 +1,102 @@
+{
+  "generator": "procedural: randomized DFS spanning tree + braiding (no external dataset files)",
+  "splits_by_maze_identity": true,
+  "mazes": [
+    {
+      "seed": 1000,
+      "split": "train",
+      "H": 9,
+      "W": 9,
+      "braid": 0.15,
+      "sha256": "07e834072cdb47b45ba661200ba726f47427f98e42c928548a164c4a01535e8c"
+    },
+    {
+      "seed": 1001,
+      "split": "train",
+      "H": 9,
+      "W": 9,
+      "braid": 0.15,
+      "sha256": "8f26c8ddd0159a665b24481afa349df5f2490c723e20fa372b6505b090d4a51a"
+    },
+    {
+      "seed": 1002,
+      "split": "train",
+      "H": 9,
+      "W": 9,
+      "braid": 0.15,
+      "sha256": "46c3470995ac15792149913737f1a375b7d40adc29df498107f745f691455655"
+    },
+    {
+      "seed": 1003,
+      "split": "train",
+      "H": 9,
+      "W": 9,
+      "braid": 0.15,
+      "sha256": "33946b05b5f6d075e261a35c0eeca0dcfd02fe812354093951ff47fab692c0e8"
+    },
+    {
+      "seed": 1004,
+      "split": "val",
+      "H": 9,
+      "W": 9,
+      "braid": 0.15,
+      "sha256": "a793870b65f7163335a0edfd5b7a34d49caadfd9f0203c0f3c3bf54c2beef047"
+    },
+    {
+      "seed": 1005,
+      "split": "val",
+      "H": 9,
+      "W": 9,
+      "braid": 0.15,
+      "sha256": "aa432e9051bd2249f1af1a52f40591a32f447c852ec4f245862a9b30e49446b5"
+    },
+    {
+      "seed": 1006,
+      "split": "val",
+      "H": 9,
+      "W": 9,
+      "braid": 0.15,
+      "sha256": "515e8351f3d3a86e561dfb1b95a6e4460124330abbcb27bb79cd56e0b2c2b21d"
+    },
+    {
+      "seed": 1007,
+      "split": "val",
+      "H": 9,
+      "W": 9,
+      "braid": 0.15,
+      "sha256": "c74b0680f822be4bb19e1fe88e7597bd21b498165dd927ce3d307315aa851a9f"
+    },
+    {
+      "seed": 1008,
+      "split": "test",
+      "H": 9,
+      "W": 9,
+      "braid": 0.15,
+      "sha256": "16631313296433c67d4dc52db3754c045c6b2dd147d4545bd297390490787059"
+    },
+    {
+      "seed": 1009,
+      "split": "test",
+      "H": 9,
+      "W": 9,
+      "braid": 0.15,
+      "sha256": "5a798a2acb9135a75085da1e6b80a840e4d55462e355fb3780a83c3bd9d1f9c1"
+    },
+    {
+      "seed": 1010,
+      "split": "test",
+      "H": 9,
+      "W": 9,
+      "braid": 0.15,
+      "sha256": "0ec634464dbfb79b57b09fe5a55c8b8a6a69c269c88857698ef72cd3679be489"
+    },
+    {
+      "seed": 1011,
+      "split": "test",
+      "H": 9,
+      "W": 9,
+      "braid": 0.15,
+      "sha256": "8f641f53235e995dfdcfe140613aeff668f751cdb1abd5230076196a6dd3e906"
+    }
+  ]
+}

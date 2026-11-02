@@ -1,0 +1,85 @@
+{
+  "train_mazes": [
+    {
+      "maze_seed": 1000,
+      "checkpoint": "artifacts/checkpoints/cavr_trained_m1000.npz",
+      "phases": {
+        "static": {
+          "n_episodes": 34,
+          "success_rate": 0.6764705882352942
+        },
+        "post_block": {
+          "n_episodes": 79,
+          "success_rate": 0.9746835443037974
+        },
+        "post_shortcut": {
+          "n_episodes": 73,
+          "success_rate": 1.0
+        }
+      }
+    },
+    {
+      "maze_seed": 1001,
+      "checkpoint": "artifacts/checkpoints/cavr_trained_m1001.npz",
+      "phases": {
+        "static": {
+          "n_episodes": 63,
+          "success_rate": 0.9047619047619048
+        },
+        "post_block": {
+          "n_episodes": 105,
+          "success_rate": 0.9904761904761905
+        },
+        "post_shortcut": {
+          "n_episodes": 68,
+          "success_rate": 1.0
+        }
+      }
+    },
+    {
+      "maze_seed": 1002,
+      "checkpoint": "artifacts/checkpoints/cavr_trained_m1002.npz",
+      "phases": {
+        "static": {
+          "n_episodes": 89,
+          "success_rate": 0.9325842696629213
+        },
+        "post_block": {
+          "n_episodes": 152,
+          "success_rate": 0.993421052631579
+        },
+        "post_shortcut": {
+          "n_episodes": 139,
+          "success_rate": 1.0
+        }
+      }
+    },
+    {
+      "maze_seed": 1003,
+      "checkpoint": "artifacts/checkpoints/cavr_trained_m1003.npz",
+      "phases": {
+        "static": {
+          "n_episodes": 35,
+          "success_rate": 0.6857142857142857
+        },
+        "post_block": {
+          "n_episodes": 18,
+          "success_rate": 0.4444444444444444
+        },
+        "post_shortcut": {
+          "n_episodes": 30,
+          "success_rate": 0.9
+        }
+      }
+    }
+  ],
+  "config": {
+    "steps": 8000,
+    "t_block": 3200,
+    "t_shortcut": 6000,
+    "rho_true": 0.1,
+    "h": 4.0,
+    "kappa": 0.0003
+  },
+  "primary_checkpoint": "artifacts/checkpoints/cavr_trained.npz"
+}

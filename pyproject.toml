@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cavr-dyna"
+version = "0.1.0"
+description = "CAVR-Dyna: Counterfactual, Aleatoric-aware, Value-of-computation-driven Repair for Dyna-style maze navigation (research implementation)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "numpy>=1.26",
+    "PyYAML>=6.0",
+    "matplotlib>=3.8",
+    "pandas>=2.0",
+    "pytest>=7.4",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

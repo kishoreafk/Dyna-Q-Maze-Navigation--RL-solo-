@@ -1,0 +1,93 @@
+# Pilot configuration (executed in this delivery; see reports/decisions.md)
+run_name: pilot
+seed_base: 20261102
+
+env:
+  H: 9
+  W: 9
+  braid: 0.15
+  max_steps: 200
+  goal: [8, 8]
+  start: [0, 0]
+
+splits:
+  n_train: 4
+  n_val: 4
+  n_test: 4
+  maze_seed_start: 1000
+
+grid:
+  methods:
+    - q_learning
+    - dyna_q
+    - dyna_q_plus
+    - prioritized_sweeping
+    - dirichlet_dyna
+    - local_forgetting
+    - dstar_lite
+    - cavr
+    - cavr_nodetector
+    - cavr_fixedB
+  scenarios:
+    static:
+      rhos: [0.0, 0.3]
+    blocking:
+      rhos: [0.0, 0.1, 0.3]
+    shortcut:
+      rhos: [0.0, 0.1, 0.3]
+  steps: 2500
+  t_change_frac: 0.5
+  second_change_frac: 0.75
+  episode_seeds: 2     # per maze: 4 val mazes x 2 = 8 map/seed pairs
+  save_checkpoints: true
+
+agent:
+  alpha: 0.1
+  alpha_model: 0.15
+  gamma: 0.97
+  eps: 0.1
+  beta: 0.5
+  b0: 0.6
+  edge_lr: 0.4
+  rho_est: 0.1        # fixed calibrated slip estimate (spec 4; see decisions.md)
+  dyna_n: 20
+  ps_n: 20
+  ps_theta: 0.001
+  lf_n: 32
+  cap: 64
+  theta_useful: 0.01
+  theta_push: 0.05
+  theta_probe: 0.12
+  probe_min_gap: 8
+  budget_theta_high: 0.15
+  budget_theta_lo: 0.10
+  drift: 0.01
+  cooldown: 15
+  dstar_retest_interval: 50
+
+calibrated: {}        # filled by calibration phase: {h: ..., kappa: ...}
+
+train:
+  steps: 8000         # training curriculum length per maze (scripts/train_model.py)
+
+verify:
+  steps: 2000         # held-out verification horizon
+  rho: 0.3            # non-gating robustness slip
+
+canonical:
+  H: 6
+  W: 9
+  steps: 2500
+  block_t: 1000
+  shortcut_t: 2000
+  dyna_ns: [0, 5, 20, 50]
+  seeds: 3
+
+calibration:
+  val_steps: 1200
+  h_grid: [3.0, 4.0, 5.0, 6.0, 8.0, 10.0]
+  kappa_grid: [0.0003, 0.001, 0.003]
+  target_far_per_1000: 5.0
+
+logging:
+  step_log_subset: true   # per-step JSONL for episode_seed==0 runs (gzipped)

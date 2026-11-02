@@ -1,0 +1,17 @@
+{
+  "kappa_grid": [
+    {
+      "kappa": 0.0003,
+      "mean_delay": 498.0
+    },
+    {
+      "kappa": 0.001,
+      "mean_delay": 510.5
+    },
+    {
+      "kappa": 0.003,
+      "mean_delay": 750.0
+    }
+  ],
+  "chosen_kappa": 0.0003
+}
